@@ -3,8 +3,13 @@ const WebSocket = require('ws');
 const http = require('http');
 
 const app = express();
+//const server = http.createServer(app);
+//const wss = new WebSocket.Server({ server });
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
+server.listen(8080, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:8081`);
+});
 
 // 웹소켓 연결 처리
 wss.on('connection', function connection(ws) {
