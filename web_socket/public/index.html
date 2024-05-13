@@ -10,7 +10,7 @@
     <button onclick="sendMessage()">Send Message to Server</button>
 
     <script>
-        const ws = new WebSocket('ws://localhost:8081');
+        const ws = new WebSocket('ws://172.30.1.56:8081'); // 현재 ip주소로.
 
         ws.onopen = function() {
             console.log('WebSocket connection established');
